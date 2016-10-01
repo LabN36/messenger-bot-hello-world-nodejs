@@ -84,29 +84,7 @@ function receivedMessage(event) {
 
   if (messageText) {
 
-    // If we receive a text message, check to see if it matches any special
-    // keywords and send back the corresponding example. Otherwise, just echo
-    // the text we received.
-    switch (messageText) {
-      case 'image':
-        // sendImageMessage(senderID);
-        break;
-
-      case 'button':
-        // sendButtonMessage(senderID);
-        break;
-
-      case 'generic':
-        // sendGenericMessage(senderID);
-        break;
-
-      case 'receipt':
-        // sendReceiptMessage(senderID);
-        break;
-
-      default:
         sendTextMessage(senderID, messageText);
-    }
   } else if (messageAttachments) {
     sendTextMessage(senderID, "Message with attachment received");
   }
@@ -118,26 +96,7 @@ function sendTextMessage(recipientId, messageText) {
       id: recipientId
     },
     message: {
-      attachment:{
-          type : "template",
-          payload: {
-              template_type:"button",
-            text:"check balance",
-             buttons:[
-          {
-            type:"web_url",
-            url:"https://petersapparel.parseapp.com",
-            title:"Show Website"
-          },
-          {
-            type:"phone_number",
-          title:"Call Representative",
-          payload:"+917737330390"
-          }
-        ]
-          }
-
-      }
+      text: messageText
     }
   };
 
