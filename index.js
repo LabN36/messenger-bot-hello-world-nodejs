@@ -11,6 +11,7 @@ app.use(bodyParser.json({}));
 app.use(bodyParser.urlencoded({extended:true}));
 
 var config = require('./public/config');
+var request = require('request');
 const APP_SECRET = (process.env.MESSENGER_APP_SECRET) ? process.env.MESSENGER_APP_SECRET :config.appSecret;
 const VALIDATION_TOKEN = (process.env.MESSENGER_VALIDATION_TOKEN) ?(process.env.MESSENGER_VALIDATION_TOKEN) :config.validationToken;
 const PAGE_ACCESS_TOKEN = (process.env.MESSENGER_PAGE_ACCESS_TOKEN) ?(process.env.MESSENGER_PAGE_ACCESS_TOKEN) :config.pageAccessToken;
