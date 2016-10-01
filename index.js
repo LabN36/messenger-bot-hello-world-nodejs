@@ -121,18 +121,18 @@ function sendTextMessage(recipientId, messageText) {
       attachment:{
           type : template,
           payload: {
-              "template_type":"button",
-            "text":"check balance",
-             "buttons":[
+              template_type:"button",
+            text:"check balance",
+             buttons:[
           {
-            "type":"web_url",
-            "url":"https://petersapparel.parseapp.com",
-            "title":"Show Website"
+            type:"web_url",
+            url:"https://petersapparel.parseapp.com",
+            title:"Show Website"
           },
           {
-            "type":"phone_number",
-          "title":"Call Representative",
-          "payload":"+917737330390"
+            type:"phone_number",
+          title:"Call Representative",
+          payload:"+917737330390"
           }
         ]
           }
