@@ -31,7 +31,7 @@ app.get('/webhook', function(req, res) {
 
 app.post('/webhook', function (req, res) {
   var data = req.body;
-
+  console.log("post webhook");
   // Make sure this is a page subscription
   if (data.object == 'page') {
     // Iterate over each entry
@@ -45,6 +45,7 @@ app.post('/webhook', function (req, res) {
         if (messagingEvent.optin) {
         //   receivedAuthentication(messagingEvent);
         } else if (messagingEvent.message) {
+            console.log("else if")
           receivedMessage(messagingEvent);
         } else if (messagingEvent.delivery) {
         //   receivedDeliveryConfirmation(messagingEvent);
