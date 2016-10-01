@@ -119,7 +119,7 @@ function sendTextMessage(recipientId, messageText) {
     },
     message: {
       attachment:{
-          type : template,
+          type : "template",
           payload: {
               template_type:"button",
             text:"check balance",
